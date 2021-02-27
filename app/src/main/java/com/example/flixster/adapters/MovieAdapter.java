@@ -14,16 +14,21 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.core.app.ActivityOptionsCompat;
+import androidx.core.view.ViewCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.flixster.DetailActivity;
+import com.example.flixster.MainActivity;
 import com.example.flixster.R;
 import com.example.flixster.models.Movie;
 
 import org.parceler.Parcels;
 
 import java.util.List;
+
+import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
 
 public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder>{
 
@@ -85,6 +90,14 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder>{
             else{
                 imageUrl = movie.getPosterPath();
             }
+/*
+            int radius = 30; // corner radius, higher value = more rounded
+            int margin = 10; // crop margin, set to 0 for corners with no crop
+            GlideApp.with(this)
+                    .load("http://via.placeholder.com/300.png")
+                    .transform(new RoundedCornersTransformation(radius, margin))
+                    .into(ivImg);
+*/
             //Register click listener on the whole row
             Glide.with(context).load(imageUrl).into(ivPoster);
             container.setOnClickListener(new View.OnClickListener() {
@@ -93,9 +106,14 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder>{
                     //navigate to a new activity on tap
                     // Toast.makeText(context, movie.getTitle(),Toast.LENGTH_SHORT).show();
                     Intent i = new Intent(context, DetailActivity.class);
+
+      //              ActivityOptionsCompat options = ActivityOptionsCompat.
+       //                     makeSceneTransitionAnimation(MovieAdapter.this, (View)ivPoster, "profile");
+
+
                   //  i.putExtra("title",movie.getTitle());
                     i.putExtra("movie", Parcels.wrap(movie));
-                    context.startActivity(i);
+                    context.startActivity(i/*,options.toBundle()*/);
                 }
             });
         }

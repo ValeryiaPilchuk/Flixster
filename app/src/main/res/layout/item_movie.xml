@@ -5,7 +5,9 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#2C3E50">
+    android:background="#2C3E50"
+
+    >
 
     <ImageView
         android:id="@+id/ivPoster"
@@ -13,7 +15,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="0dp"
         tools:layout_marginTop="0dp"
-        tools:srcCompat="@tools:sample/avatars" />
+        tools:srcCompat="@tools:sample/avatars"
+        android:transitionName="profile"/>
 
     <TextView
         android:id="@+id/tvTitle"
@@ -43,5 +46,6 @@
         android:fontFamily="@font/amaranth"
         android:textColor="#EAEDED"
         android:textSize="14sp"
-        tools:text="Series of movies about guys racing in different cars" />
+        tools:text="Series of movies about guys racing in different cars"
+        />
 </RelativeLayout>

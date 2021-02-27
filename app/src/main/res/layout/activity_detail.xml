@@ -6,19 +6,29 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".DetailActivity"
-    android:orientation="vertical">
+    android:background="#2C3E50"
+    android:orientation="vertical"
+    >
 
     <com.google.android.youtube.player.YouTubePlayerView
         android:id="@+id/player"
         android:layout_width="match_parent"
-        android:layout_height="250dp" />
+        android:layout_height="250dp"
+        android:transitionName="profile"/>
 
     <TextView
         android:id="@+id/tvTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="30sp"
-        tools:text="It Chapter Two" />
+        android:textColor="#F2F3F4"
+        android:textStyle="bold"
+        tools:text="It Chapter Two"
+        android:fontFamily="@font/amarante"
+        android:shadowColor="#212F3D"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="3"/>
 
     <RatingBar
         android:id="@+id/ratingBar"
@@ -33,5 +43,8 @@
         android:id="@+id/tvOverview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/amaranth"
+        android:textColor="#EAEDED"
+        android:textSize="14sp"
         tools:text="Defeated by members of the Losers' Club, the evil clown Pennywise returns 27 years later to terrorize the town of Derry, Maine, once again. Now adults, the childhood friends have long since gone their separate ways. But when people start disappearing, Mike Hanlon calls the others home for one final stand. Damaged by scars from the past, the united Losers must conquer their deepest fears to destroy the shape-shifting Pennywise -- now more powerful than ever." />
 </LinearLayout>
